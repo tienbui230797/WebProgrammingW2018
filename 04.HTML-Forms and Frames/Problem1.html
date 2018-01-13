@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Last Name</title>
+</head>
+<style>
+	table, td{		
+		border: 1px solid black;		
+		border-collapse: collapse;		
+	}
+	input{		
+		border: 1.5px inset;	
+		width: 90%							
+	}
+</style>
+<body>
+	<table style="width: 70%">
+	
+		<tr>
+			<td style="text-align: right;"><b>Last Name</b></td>
+			<td colspan="3">
+				<form>
+					<input type="text" value="Nakov">
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: right;"><b>First Name</b></td>
+			<td colspan="3">
+				<form>
+					<input type="text" value="Svetlin">
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: right;"><b>Address</b></td>
+			<td colspan="3">
+				<form>
+					<textarea cols= "50" rows="4">
+						17 Hristo Botev Str. 
+						floor 3, apt. 12
+					</textarea>
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: right;"><b>City</b></td>
+			<td>
+				<form>
+					<input type="text" value="Kaspichan" style="width: 90%">
+				</form>
+			</td>
+			<td style="text-align: center;"><b>State</b></td>
+			<td style="width: 50px">
+				<form>
+					<input type="text" style="width: 90%">
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: right;"><b>Zip/Postal Code</b></td>
+			<td colspan="3">
+				<form>
+					<input type="number" value="9325" style="width: 30%">
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: right;"><b>Country</b></td>
+			<td colspan="3">
+				<form>					
+					<select>
+  						<option value="Bulgaria">Bulgaria</option>
+ 						<option value="England">England</option>
+ 						<option value="America">America</option>
+ 						<option value="Germany">Germany</option>
+					</select>
+				</form>
+			</td>
+		</tr>
+		</tr>
+		<tr>
+			<td style="text-align: right;"><p><b>Phone (coungtry code,<br>area code, number</b></p></td>
+			<td colspan="3">
+				<form>
+					(+<input type="number" value="359" style="width: 20%">) <input type="number" value="88" style="width: 20%"> - <input type="number" value="8334343" style="width: 40%">
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: right;"><b>E-mail</b></td>
+			<td colspan="3">
+				<form>
+					<input type="email" value= "nakov@kaspichan.org" required="true" pattern="[^ @]*@[^ @].[^ @]">
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: right;"><b>Birth date</b></td>
+			<td colspan="3">
+				<form>
+					Month <input type="number" value="06" style="width: 10%"> Day <input type="number" value="14" style="width: 10%"> Year (4 digit) <input type="number" value="1980" style="width: 10%">
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: right;"><b>Gender</b></td>
+			<td colspan="3">
+				<form>
+					<input list="genders" style="width: 30%">
+					<select>
+  						<option value="Male">Male</option>
+  						<option value="Female">Female</option>
+  						<option value="Other">Other</option>  						
+					</select>
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: right;"><b>Starting date</b></td>
+			<td colspan="3">
+				<form>
+					<input type="radio" name="startringdate" checked style="width: 10%">Spring 2006	<input type="radio" name="startringdate" style="width: 10%">Summer 2006
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: right;"><b>Comments/Questions</b></td>
+			<td colspan="3">
+				<form>
+					<textarea cols= "50" rows="4">
+						Please send me mor information
+						about the lodging
+					</textarea>
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" align="center" style="background-color: blue">
+				<form>
+					<button>Submit</button> <button>Clear this form</button>
+				</form>
+			</td>
+		</tr>
+	</table>
+
+</body>
+</html>
