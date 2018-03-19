@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>YouTube</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">	
+</head>
+<style type="text/css">
+	.tools-container{
+		width: 100%;
+		height: 56px;
+    	padding: 0 16px;
+    	display: flex;
+    	border-bottom: 1px solid #99b2b1;
+	}
+	.menu-button{
+		height: 25px;
+		background-color: white;
+		border: none;
+		margin-top: 10px;
+		float: left;
+		color: #99b2b1;
+	}	
+	.sort-button{
+		height: 30px;
+		background-color: white;
+		border: none;				
+		color: #99b2b1;
+		margin-left: 20px;
+		font-size: 20px;
+	}		
+	.youtube-icon{
+		height: 60px;
+		width: 100px;
+		padding-left: 10px;
+		float: left;		
+	}
+	.tools-container span{
+		float: left;	
+		font-size: 10px;
+		padding-top: 10px;		
+	}
+	.search-frame{
+		float: left;
+		width: 550px;
+		height: 25px;
+		padding-left: 70px;
+		padding-top: 10px;		
+	}
+	.search-button{
+		float: left;
+		width: 50px;
+		height: 31px;
+		margin-top: 10px; 
+		margin-left: 3px;
+		color: #99b2b1;
+	}
+	.upload-button{
+		float: left;
+		background-color: white;
+		border: none;
+		margin-left: 250px;
+		color: #99b2b1;
+	}
+	.apps-button{
+		float: left;
+		background-color: white;
+		border: none;		
+		margin-left: 10px;	
+		color: #99b2b1;	
+	}
+	.more-button{
+		float: left;
+		background-color: white;
+		border: none;
+		margin-left: 10px;	
+		color: #99b2b1;
+	}
+	.login-button{
+		float: left;
+		background-color: white;
+		border: none;
+		margin-left: 10px;	
+		font-size: 16px;
+		font-weight: bold;
+		font-family: arial;
+		color: red;
+	}
+	.watching-container{
+		width: 100%;	
+		display: flex;
+	}
+	.videos-tools{	
+		width: 65%;
+		height: 480px;
+		margin-top: 20px;
+		margin-left: 20px;
+		border-bottom: 1px solid #99b2b1;
+	}
+	.videos-tools h1{
+		font-size: 20px;
+		font-weight: normal;
+		font-family: Times New Roman
+	}
+	.user-tools{
+		display: inline-block;
+		width: 100%;
+		color: #99b2b1;
+		font-size: 20px;
+		border-bottom: 1px solid #99b2b1;
+		padding-bottom: 10px;
+	}	
+	.more2-button{
+		float: right;
+		color: #99b2b1;
+		background-color: white;
+		border: none;
+	}
+	.playlist-button{
+		float: right;
+		color: #99b2b1;
+		background-color: white;
+		border: none;
+		margin-right: 10px;
+	}
+	.share-button{
+		float: right;
+		color: #99b2b1;
+		background-color: white;
+		border: none;
+		margin-right: 10px;
+		display: inline-block;
+	}
+	.dislike-button{
+		float: right;
+		color: #99b2b1;
+		background-color: white;
+		border: none;
+		margin-right: 10px;
+	}
+	.like-button{
+		float: right;
+		color: #99b2b1;
+		background-color: white;
+		border: none;
+		margin-right: 10px;
+	}
+	.user-tools span{
+		font-size: 15px;		
+		float: right;
+		padding-top: 3px;
+		padding-left: 5px;
+	}
+	.subscribe{
+		border-radius: 100px;
+		padding-top: 10px;
+		display: flex;
+		height: 50px;
+	}	
+	.producer-inform{
+		float: left;
+		padding-top: 5px;
+		padding-left: 10px;
+		margin-right: 480px;
+	}
+	.producer-inform a{
+		text-decoration: none;
+		color: black;
+		font-size: 18px;
+		font-weight: bold;
+		padding-left: 10px;
+		padding-top: 10px;
+	}
+	.video-inform{
+		padding-top: 10px;
+		border-bottom: 1px solid #99b2b1;
+		padding-bottom: 20px;
+	}
+	.producer-inform span{
+		padding-left: 10px;
+		font-size: 15px;
+		color: #99b2b1;
+	}
+	.subscribe-button{
+		display: flex;
+	}
+	.subscribe-button button{
+		height: 40px;
+		width: 160px;
+		background-color: red;
+		color: white;	
+		text-transform: inherit;	
+	}
+	.other-inform{
+		padding-top: 20px;
+		padding-left: 70px;
+	}
+	.other-inform span a{
+		text-decoration: none;
+	}
+	.title{
+		display: flex;
+		margin-top: 20px;
+	}
+	.title span{
+		font-size: 20px;
+	}
+	.title button{
+		font-size: 20px;
+		display: flex;
+	}
+	.add-comment{
+		margin-top: 20px;
+		display: flex;
+	}
+	.add-comment input{
+		margin-left: 15px;
+		border-right: none;
+		border-top: none;
+		border-left: none;
+		border-bottom: 1px solid #99b2b1;
+		width: 100%;
+	}
+	.show-more{
+		padding-top: 5px;
+		border: none;
+		background-color: white;
+	}
+	.main-comments{
+		margin-top: 40px;
+		display: block;
+	}
+	.commnet-content{
+		display: block;
+		margin-left: 10px;
+	}
+	.like-button2{
+		color: #99b2b1;
+		background-color: white;
+		border: none;				
+	}
+	.like-button2 i{
+		font-size: 20px;
+	}
+	.dislike-button2 i{
+		font-size: 20px;
+	}	
+	.dislike-button2{
+		color: #99b2b1;
+		background-color: white;
+		border: none;
+	}
+	.personal{
+		display: flex;
+		margin-bottom: 20px;
+	}
+	.date{
+		margin-left: 5px;
+		color: #99b2b1;
+	}
+	.next-video{
+		border-bottom: 1px solid #99b2b1;
+		padding-bottom: 20px;
+
+	}
+	.other-videos{
+		margin-left: 30px;
+		margin-top: 20px;
+		width: 30%;
+	}
+	.up-next{
+		font-size: 20px;
+		margin-right: 250px;
+	}
+	.autoplay{
+		font-size: 13px;
+		font-weight: bold;
+		color: #99b2b1;
+	}
+	.video-detail{
+		margin-top: 20px;
+		display: flex;
+		margin-right: 10px;
+	}
+	.videos-inform{
+		display: block;
+		margin-left: 10px;
+	}
+	.numofviews{
+		font-size: 13px;
+		color: #99b2b1;
+	}
+	.rest{
+		display: block;
+		margin-top: 20px;
+	}
+	.video-detail2{
+		margin-top: 10px;
+		display: flex;
+		margin-right: 10px;
+	}
+	.home-tool{
+		width: 25%;
+		height: 100%;
+		background-color: white;
+
+	}
+</style>
+<body>
+	<div class = "tools-container">
+		<button style="font-size:24px" class="menu-button"><i class="material-icons">&#xe5d2;</i></button>
+		<div class="youtube-icon">
+			<a href="#"><img src="youtube_logo_new-759.jpg" style="height: 50px; width: 100px;"></a>			
+		</div>
+		<span>VN</span>
+		<div class="search-frame">
+			<input type="text" style="width: 100%; height: 100%;" placeholder="Search">
+		</div>
+		<button style="font-size:24px" class="search-button"><i class="material-icons">&#xe8b6;</i></button>
+		<button class="upload-button"><i class="material-icons">&#xe2c6;</i></button>
+		<button class="apps-button"><i class="material-icons">&#xe5c3;</i></button>
+		<button class="more-button"><i class="material-icons">&#xe5d4;</i></button>
+		<button class="login-button">SIGN IN</button>
+	</div>
+	<div class="home-tool">
+		
+	</div>
+	<div class="watching-container">
+		<div class="videos-tools">
+			<iframe style="height: 100%; width: 100%" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>	
+			<h1>Bohemian Rhapsody | Muppet Music Video | The Muppets</h1>
+			<div class="user-tools">
+				311,479 views
+				<button class="more2-button"><i class="material-icons">&#xe5d3;</i></button>
+				<button class="playlist-button"><i class="material-icons">&#xe03b;</i></button>
+				<button class="share-button"><i class="material-icons">&#xe80d;</i> <span>SHARE</span></button>
+				<button class="dislike-button"><i class="material-icons">&#xe8db;</i> <span>1K</span></button>
+				<button class="like-button"><i class="material-icons">&#xe8dc;</i> <span>800</span></button>
+			</div>	
+			<div class="video-inform">
+				<div class="subscribe">
+					<img width="48" style ="border-radius: 50px" src="https://yt3.ggpht.com/-DF7PtesCPOY/AAAAAAAAAAI/AAAAAAAAAAA/j3KDERgDhEs/s88-c-k-no-mo-rj-c0xffffff/photo.jpg">
+					<div class="producer-inform">
+						<a href="#">The Muppets</a><br>
+						<span>Published on Nov 23, 2009</span>
+					</div>
+					<div class="subscribe-button">
+						<button>SUBSCRIBE 612K</button>
+					</div>					
+				</div>
+				<div class="other-inform">
+					<span>The Muppet’s Musical Gang is back at it with their rendition of Queen’s Bohemian Rhapsody!</span><br>
+					<span>Subscribe for all new videos from The Muppets! <a href="#"> http://www.youtube.com/subscription_c... </a></span><br>
+					<span>Watch more Muppet Music Videos: <a href="#"> https://www.youtube.com/playlist?list...</a></span><br>
+					<button class="show-more" onclick="myFunction()"">SHOW MORE</button>
+					<p id="myDIV" style="display: none;">Muppets Characters
+					   Gonzo is a multi-talented artist who performs outrageous daredevil stunts. Though an odd looking creature, Gonzo takes pride in his uniqueness and enjoys every adventure he goes on with the Muppets including the occasional space voyage. </p>
+				</div>
+			</div>	
+			<div class="comment-tool">
+				<div class="public-comment">
+					<div class="title">
+						<span>25,006 Commnents</span>
+						<button class="sort-button"><i class="material-icons">sort</i> Sort by</button>
+					</div>
+					<div class="add-comment">
+						<img height="40" width="40" style="border-radius: 40px" src="https://s.ytimg.com/yts/img/avatar_48-vfllY0UTT.png">
+						<input type="text" placeholder="Add a public comment...">
+					</div>
+				</div>
+				<div class="main-comments">
+					<div class="personal">
+						<div>
+							<img height="40" width="40" style="border-radius: 40px;" src="https://yt3.ggpht.com/-8s4KQgoR2Nw/AAAAAAAAAAI/AAAAAAAAAAA/Tpun-fm0KsI/s48-c-k-no-mo-rj-c0xffffff/photo.jpg">
+						</div>
+						<div class="commnet-content">
+							<span>Doggo With Bread</span>
+							<span class="date">3 months ago</span><br><br>
+							<span>Pass the aux cord fam﻿</span><br><br>
+							<button class="like-button2"><i class="material-icons">&#xe8dc;</i> <span>345</span></button>
+							<button class="dislike-button2"><i class="material-icons">&#xe8db;</i> <span> Reply</span></button>
+						</div>						
+					</div>
+					<div class="personal">
+						<div>
+							<img height="40" width="40" style="border-radius: 40px;" src="https://yt3.ggpht.com/-8s4KQgoR2Nw/AAAAAAAAAAI/AAAAAAAAAAA/Tpun-fm0KsI/s48-c-k-no-mo-rj-c0xffffff/photo.jpg">
+						</div>
+						<div class="commnet-content">
+							<span>Doggo With Bread</span>
+							<span class="date">3 months ago</span><br><br>
+							<span>Pass the aux cord fam﻿</span><br><br>
+							<button class="like-button2"><i class="material-icons">&#xe8dc;</i> <span>345</span></button>
+							<button class="dislike-button2"><i class="material-icons">&#xe8db;</i> <span> Reply</span></button>
+						</div>						
+					</div>
+					<div class="personal">
+						<div>
+							<img height="40" width="40" style="border-radius: 40px;" src="https://yt3.ggpht.com/-8s4KQgoR2Nw/AAAAAAAAAAI/AAAAAAAAAAA/Tpun-fm0KsI/s48-c-k-no-mo-rj-c0xffffff/photo.jpg">
+						</div>
+						<div class="commnet-content">
+							<span>Doggo With Bread</span>
+							<span class="date">3 months ago</span><br><br>
+							<span>Pass the aux cord fam﻿</span><br><br>
+							<button class="like-button2"><i class="material-icons">&#xe8dc;</i> <span>345</span></button>
+							<button class="dislike-button2"><i class="material-icons">&#xe8db;</i> <span> Reply</span></button>
+						</div>						
+					</div>
+					<div class="personal">
+						<div>
+							<img height="40" width="40" style="border-radius: 40px;" src="https://yt3.ggpht.com/-8s4KQgoR2Nw/AAAAAAAAAAI/AAAAAAAAAAA/Tpun-fm0KsI/s48-c-k-no-mo-rj-c0xffffff/photo.jpg">
+						</div>
+						<div class="commnet-content">
+							<span>Doggo With Bread</span>
+							<span class="date">3 months ago</span><br><br>
+							<span>Pass the aux cord fam﻿</span><br><br>
+							<button class="like-button2"><i class="material-icons">&#xe8dc;</i> <span>345</span></button>
+							<button class="dislike-button2"><i class="material-icons">&#xe8db;</i> <span> Reply</span></button>
+						</div>						
+					</div>
+					<div class="personal">
+						<div>
+							<img height="40" width="40" style="border-radius: 40px;" src="https://yt3.ggpht.com/-8s4KQgoR2Nw/AAAAAAAAAAI/AAAAAAAAAAA/Tpun-fm0KsI/s48-c-k-no-mo-rj-c0xffffff/photo.jpg">
+						</div>
+						<div class="commnet-content">
+							<span>Doggo With Bread</span>
+							<span class="date">3 months ago</span><br><br>
+							<span>Pass the aux cord fam﻿</span><br><br>
+							<button class="like-button2"><i class="material-icons">&#xe8dc;</i> <span>345</span></button>
+							<button class="dislike-button2"><i class="material-icons">&#xe8db;</i> <span> Reply</span></button>
+						</div>						
+					</div>
+					<div class="personal">
+						<div>
+							<img height="40" width="40" style="border-radius: 40px;" src="https://yt3.ggpht.com/-8s4KQgoR2Nw/AAAAAAAAAAI/AAAAAAAAAAA/Tpun-fm0KsI/s48-c-k-no-mo-rj-c0xffffff/photo.jpg">
+						</div>
+						<div class="commnet-content">
+							<span>Doggo With Bread</span>
+							<span class="date">3 months ago</span><br><br>
+							<span>Pass the aux cord fam﻿</span><br><br>
+							<button class="like-button2"><i class="material-icons">&#xe8dc;</i> <span>345</span></button>
+							<button class="dislike-button2"><i class="material-icons">&#xe8db;</i> <span> Reply</span></button>
+						</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="other-videos">
+			<div class="next-video">
+				<div class="video-title">
+					<span class="up-next">Up next</span>
+					<span class="autoplay"> AUTOPLAY</span>
+				</div>
+				<div class="video-detail">
+					<img width="168" src="https://i.ytimg.com/vi/L0MK7qz13bU/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&amp;rs=AOn4CLB-X3lun3aVWo_An5pU9M9-GqLf6A">
+					<div class="videos-inform">
+						<span>FROZEN | Let It Go Sing-along | Official Disney UK</span><br><br>
+						<span class="numofviews">Disney UK</span><br>
+						<span class="numofviews">1,4B views</span>
+					</div>
+				</div>
+			</div>
+			<div class="rest">
+				<div class="video-detail2">
+					<img width="168" src="https://i.ytimg.com/vi/L0MK7qz13bU/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&amp;rs=AOn4CLB-X3lun3aVWo_An5pU9M9-GqLf6A">
+					<div class="videos-inform">
+						<span>FROZEN | Let It Go Sing-along | Official Disney UK</span><br><br>
+						<span class="numofviews">Disney UK</span><br>
+						<span class="numofviews">1,4B views</span>
+					</div>
+				</div>
+				<div class="video-detail2">
+					<img width="168" src="https://i.ytimg.com/vi/L0MK7qz13bU/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&amp;rs=AOn4CLB-X3lun3aVWo_An5pU9M9-GqLf6A">
+					<div class="videos-inform">
+						<span>FROZEN | Let It Go Sing-along | Official Disney UK</span><br><br>
+						<span class="numofviews">Disney UK</span><br>
+						<span class="numofviews">1,4B views</span>
+					</div>
+				</div>
+				<div class="video-detail2">
+					<img width="168" src="https://i.ytimg.com/vi/L0MK7qz13bU/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&amp;rs=AOn4CLB-X3lun3aVWo_An5pU9M9-GqLf6A">
+					<div class="videos-inform">
+						<span>FROZEN | Let It Go Sing-along | Official Disney UK</span><br><br>
+						<span class="numofviews">Disney UK</span><br>
+						<span class="numofviews">1,4B views</span>
+					</div>
+				</div>
+				<div class="video-detail2">
+					<img width="168" src="https://i.ytimg.com/vi/L0MK7qz13bU/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&amp;rs=AOn4CLB-X3lun3aVWo_An5pU9M9-GqLf6A">
+					<div class="videos-inform">
+						<span>FROZEN | Let It Go Sing-along | Official Disney UK</span><br><br>
+						<span class="numofviews">Disney UK</span><br>
+						<span class="numofviews">1,4B views</span>
+					</div>
+				</div>
+				<div class="video-detail2">
+					<img width="168" src="https://i.ytimg.com/vi/L0MK7qz13bU/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&amp;rs=AOn4CLB-X3lun3aVWo_An5pU9M9-GqLf6A">
+					<div class="videos-inform">
+						<span>FROZEN | Let It Go Sing-along | Official Disney UK</span><br><br>
+						<span class="numofviews">Disney UK</span><br>
+						<span class="numofviews">1,4B views</span>
+					</div>
+				</div>
+				<div class="video-detail2">
+					<img width="168" src="https://i.ytimg.com/vi/L0MK7qz13bU/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&amp;rs=AOn4CLB-X3lun3aVWo_An5pU9M9-GqLf6A">
+					<div class="videos-inform">
+						<span>FROZEN | Let It Go Sing-along | Official Disney UK</span><br><br>
+						<span class="numofviews">Disney UK</span><br>
+						<span class="numofviews">1,4B views</span>
+					</div>
+				</div>
+				<div class="video-detail2">
+					<img width="168" src="https://i.ytimg.com/vi/L0MK7qz13bU/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&amp;rs=AOn4CLB-X3lun3aVWo_An5pU9M9-GqLf6A">
+					<div class="videos-inform">
+						<span>FROZEN | Let It Go Sing-along | Official Disney UK</span><br><br>
+						<span class="numofviews">Disney UK</span><br>
+						<span class="numofviews">1,4B views</span>
+					</div>
+				</div>
+				<div class="video-detail2">
+					<img width="168" src="https://i.ytimg.com/vi/L0MK7qz13bU/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&amp;rs=AOn4CLB-X3lun3aVWo_An5pU9M9-GqLf6A">
+					<div class="videos-inform">
+						<span>FROZEN | Let It Go Sing-along | Official Disney UK</span><br><br>
+						<span class="numofviews">Disney UK</span><br>
+						<span class="numofviews">1,4B views</span>
+					</div>
+				</div>
+				<div class="video-detail2">
+					<img width="168" src="https://i.ytimg.com/vi/L0MK7qz13bU/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&amp;rs=AOn4CLB-X3lun3aVWo_An5pU9M9-GqLf6A">
+					<div class="videos-inform">
+						<span>FROZEN | Let It Go Sing-along | Official Disney UK</span><br><br>
+						<span class="numofviews">Disney UK</span><br>
+						<span class="numofviews">1,4B views</span>
+					</div>
+				</div>
+				<div class="video-detail2">
+					<img width="168" src="https://i.ytimg.com/vi/L0MK7qz13bU/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&amp;rs=AOn4CLB-X3lun3aVWo_An5pU9M9-GqLf6A">
+					<div class="videos-inform">
+						<span>FROZEN | Let It Go Sing-along | Official Disney UK</span><br><br>
+						<span class="numofviews">Disney UK</span><br>
+						<span class="numofviews">1,4B views</span>
+					</div>
+				</div>
+				<div class="video-detail2">
+					<img width="168" src="https://i.ytimg.com/vi/L0MK7qz13bU/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&amp;rs=AOn4CLB-X3lun3aVWo_An5pU9M9-GqLf6A">
+					<div class="videos-inform">
+						<span>FROZEN | Let It Go Sing-along | Official Disney UK</span><br><br>
+						<span class="numofviews">Disney UK</span><br>
+						<span class="numofviews">1,4B views</span>
+					</div>
+				</div>
+				<div class="video-detail2">
+					<img width="168" src="https://i.ytimg.com/vi/L0MK7qz13bU/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&amp;rs=AOn4CLB-X3lun3aVWo_An5pU9M9-GqLf6A">
+					<div class="videos-inform">
+						<span>FROZEN | Let It Go Sing-along | Official Disney UK</span><br><br>
+						<span class="numofviews">Disney UK</span><br>
+						<span class="numofviews">1,4B views</span>
+					</div>
+				</div>				
+			</div>
+		</div>
+	</div>
+	<script>
+		function myFunction() {
+    		var x = document.getElementById("myDIV");
+    		if (x.style.display === "none") {
+       			 x.style.display = "block";
+    		} else {
+        		x.style.display = "none";
+   			 }
+			}
+	</script>	
+
+</body>
+</html>
